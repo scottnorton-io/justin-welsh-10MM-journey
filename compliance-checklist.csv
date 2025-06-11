@@ -1,0 +1,11 @@
+Control_ID,Requirement_Description,Category,Priority,Status,Owner,Document_Reference,Validation_Method,Last_Reviewed,Comments
+CC-1.1,Restrict access to cardholder data to only authorized personnel,Access Control,High,Pending,Security Team,access-policy.md,Review access logs,2025-05-15,
+CC-1.2,Implement two-factor authentication for administrative access,Access Control,High,Complete,IT Ops,mfa-policy.pdf,Authentication test,2025-06-01,Enabled via Okta
+CC-2.1,Ensure antivirus software is installed and active on all endpoints,System Protection,Medium,In Progress,IT Ops,antivirus-checklist.txt,Endpoint scan,2025-06-05,Needs Mac coverage
+CC-2.2,Patch critical software vulnerabilities within 30 days of discovery,Vulnerability Management,High,Pending,DevSecOps,patch-policy.md,Patch audit,2025-04-30,Delayed due to vendor hold
+CC-3.1,Encrypt transmission of sensitive data over public networks,Data Security,High,Complete,Network Team,transport-encryption.md,SSL/TLS scan,2025-05-20,
+CC-3.2,Encrypt stored cardholder data using AES-256,Data Security,High,In Progress,Security Team,encryption-standards.md,Data storage audit,2025-06-03,Legacy files unencrypted
+CC-4.1,Establish and maintain a risk assessment process,Risk Management,Medium,Complete,Compliance,risk-process.md,Review assessment log,2025-05-01,
+CC-4.2,Perform formal risk assessment at least annually,Risk Management,Medium,Pending,Compliance,risk-schedule.csv,Document review,2025-05-01,Scheduled for Q3
+CC-5.1,Monitor access to system components and data,Monitoring,High,In Progress,Security Team,monitoring-policy.md,Log analysis,2025-06-10,SIEM partially deployed
+CC-5.2,Retain audit logs for at least one year,Monitoring,High,Pending,Security Team,log-retention-policy.md,Storage audit,2025-06-08,Cloud logging not archived
