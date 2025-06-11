@@ -1,0 +1,7 @@
+Timestamp,Control_ID,Submitted_By,Document_URL,Status,Notes
+2025-06-11T12:33:00,CC-3.1,alice@example.com,https://doc.link/policy-ev123.pdf,Complete,TLS scan confirmed
+2025-06-11T13:02:17,CC-1.1,dan.hr@yourco.com,https://doc.link/access-policy-q1.pdf,Complete,Access Control Policy updated and signed
+2025-06-11T13:45:09,CC-2.2,teamops@yourco.com,https://intranet.link/onboarding-checklist.pdf,Complete,Checklist and acknowledgment form filed
+2025-06-11T14:10:55,CC-5.3,rachel.compliance@yourco.com,https://vault.link/offboarding-log.csv,Complete,All assets logged and returned
+2025-06-11T15:21:33,CC-10.1,policy-owner@yourco.com,https://drive.link/policy-review-approval.pdf,Pending Review,Awaiting signature from department head
+2025-06-11T16:05:48,CC-10.2,itadmin@yourco.com,https://secure.link/revocation-logs.txt,Complete,Account deactivation timestamped and archived
