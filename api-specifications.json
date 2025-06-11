@@ -1,0 +1,116 @@
+### 📦 `api-specifications.json`
+
+**Version**: 1.0
+**Last Updated**: 2025-06-11
+**Format**: JSON
+**Purpose**: This file outlines supported API endpoints, their authentication, methods, and expected request/response formats. The assistant will refer to this for:
+
+* Creating documentation or code samples
+* Validating JSON payloads
+* Generating API usage examples
+* Answering implementation questions in technical output
+
+---
+
+```json
+{
+  "api_name": "Compliance Evidence API",
+  "version": "v1.2",
+  "base_url": "https://api.example.com/v1",
+  "auth": {
+    "type": "Bearer Token",
+    "header": "Authorization",
+    "example_token": "Bearer YOUR_ACCESS_TOKEN"
+  },
+  "endpoints": [
+    {
+      "path": "/evidence",
+      "method": "GET",
+      "description": "Retrieve a list of compliance evidence items",
+      "query_params": {
+        "control_id": "Optional – Filter by control or requirement ID",
+        "status": "Optional – Filter by 'pending', 'complete', etc.",
+        "limit": "Optional – Max number of results to return"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "items": [
+            {
+              "evidence_id": "EV123456",
+              "control_id": "CC-3.1",
+              "status": "complete",
+              "submitted_at": "2025-05-31T14:02:00Z"
+            }
+          ],
+          "total": 1
+        }
+      }
+    },
+    {
+      "path": "/evidence",
+      "method": "POST",
+      "description": "Submit new evidence for a control",
+      "request": {
+        "content_type": "application/json",
+        "body": {
+          "control_id": "CC-3.1",
+          "submitted_by": "user@example.com",
+          "document_url": "https://example.com/docs/policy-3.1.pdf",
+          "notes": "Validated by SecOps team"
+        }
+      },
+      "response": {
+        "status": 201,
+        "body": {
+          "message": "Evidence submitted successfully",
+          "evidence_id": "EV123457"
+        }
+      }
+    },
+    {
+      "path": "/controls",
+      "method": "GET",
+      "description": "List available compliance controls",
+      "response": {
+        "status": 200,
+        "body": {
+          "controls": [
+            {
+              "control_id": "CC-1.1",
+              "description": "Restrict access to cardholder data"
+            },
+            {
+              "control_id": "CC-3.1",
+              "description": "Encrypt transmission of sensitive data"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "error_handling": {
+    "401": "Unauthorized – Check API token.",
+    "404": "Not Found – Invalid endpoint or resource.",
+    "500": "Internal Server Error – Try again later or report to support."
+  },
+  "rate_limits": {
+    "limit_per_minute": 60,
+    "throttle_policy": "Retry after 60 seconds on 429"
+  },
+  "notes": "All timestamps use ISO 8601 format. HTTPS required."
+}
+```
+
+---
+
+### ✅ GPT Usage Guidelines
+
+When asked to:
+
+* **Document an API**: Pull endpoint descriptions, formats, and samples from this file.
+* **Validate a payload**: Use `request.body` schemas to check fields and types.
+* **Write examples**: Output sample curl requests or JSON templates.
+* **Summarize integration**: Identify authentication, endpoints, and rate limits clearly.
+
+---
