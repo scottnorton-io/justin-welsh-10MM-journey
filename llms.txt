@@ -1,0 +1,62 @@
+## 📁 llms.txt – Large Language Model System Instruction
+
+---
+
+**Purpose**:
+The file `llms.txt` defines operational context for human collaborators working with the GPT Project Instruction. It aligns AI behavior with intended workflows and prevents misuse or misinterpretation.
+
+---
+
+### 🎯 Assistant Use Policy
+
+This GPT assistant:
+
+* Relies on flat files for memory; it **cannot remember prior sessions** unless the file history is uploaded again.
+* Should be used like a **consultant with static reference material** — not a conversational partner.
+* Works best when files are versioned, labeled, and structured.
+* Supports **modular project execution**, not open-ended ideation.
+
+---
+
+### 🧱 File System Best Practices
+
+To maximize effectiveness:
+
+* Limit total files to 20, max 20MB each.
+* Use **clear filenames** like `2025-04-15_pci-dss-matrix.csv` or `brand-guide_v1.2.md`.
+* Use **section headers** and **metadata inside files** to support GPT’s navigation.
+* When updating a document, use versioning: `docname_v1.md`, `docname_v2.md`.
+
+---
+
+### 🧠 When to Use Addendums
+
+Addendums should be created when:
+
+* The topic is too detailed for a prompt (e.g., a full compliance checklist).
+* Reuse across multiple sessions or projects is needed.
+* Standard reference material (e.g., a template, policy, or library) is involved.
+* A recurring structure (e.g., JSON spec or business model) is required.
+
+---
+
+### 📚 Recommended Addendums to Write
+
+Here are recommended addendums to support the GPT assistant in this execution environment:
+
+| Filename                   | Purpose                                                              |
+| -------------------------- | -------------------------------------------------------------------- |
+| `project-overview.md`      | High-level summary of the project, goals, and background context.    |
+| `compliance-checklist.csv` | Structured requirements checklist (e.g., PCI DSS, HIPAA, etc.)       |
+| `user-personas.md`         | Defined personas or roles the assistant should consider in outputs.  |
+| `message-templates.md`     | Standard messaging/communication templates used across the org.      |
+| `tone-and-style-guide.md`  | Writing tone, voice, and formatting rules.                           |
+| `api-specifications.json`  | Relevant API structure or rules if working with code/config.         |
+| `workflow-examples.md`     | Sample flows or task blueprints to follow or emulate.                |
+| `training-manual.md`       | Human onboarding doc the assistant should translate or support.      |
+| `faq-repository.md`        | Central collection of repeated user questions or internal FAQs.      |
+| `outputs-history.csv`      | Index of outputs generated across sessions for reuse/ref lookup.     |
+| `glossary-of-terms.md`     | Project or industry-specific terms and definitions.                  |
+| `code-snippets-library.md` | If applicable, reusable snippets for common coding/automation tasks. |
+
+---
