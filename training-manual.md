@@ -1,19 +1,20 @@
 # 📘 Training Manual
 
 **Filename**: `training-manual.md`  
-**Version**: 1.1  
+**Version**: 2.0  
 **Last Updated**: 2025-06-11
 
 ---
 
 ## 🎯 Purpose
 
-This manual provides the assistant with foundational training material used for onboarding new team members, standardizing internal operations, and documenting expected procedures across roles. Outputs may include:
+This manual provides training and operational guidance for executing key SOPs. It is formatted for:
 
-- SOP breakdowns  
-- Training aids or summaries  
-- New hire checklists  
-- Refreshed documentation in plain language  
+- Assistant-led training simulations  
+- Notion or JSON-based task ingestion  
+- Compliance traceability and control alignment  
+
+All procedures support modular reuse across compliance, onboarding, and IT operations.
 
 ---
 
@@ -21,125 +22,69 @@ This manual provides the assistant with foundational training material used for 
 
 ### 1. 📚 Understanding Compliance Roles
 
-- **Compliance Manager**: Oversees evidence collection, policy enforcement.  
-- **Policy Owner**: Creates and maintains documentation.  
-- **Technical Operator**: Implements and validates control measures.  
-- **Auditor/Assessor**: Reviews compliance posture and reports findings.  
+- **Compliance Manager**: Oversees evidence collection, policy enforcement  
+- **Policy Owner**: Maintains documentation and alignment  
+- **Technical Operator**: Implements and validates controls  
+- **Auditor/Assessor**: Evaluates compliance posture  
 
-→ *See `user-personas.md` for detailed role guidance.*
+→ See `user-personas.md` for persona-specific formatting:contentReference[oaicite:0]{index=0}.
 
 ---
 
 ### 2. 🔒 Security and Compliance Foundations
 
-- **Confidentiality, Integrity, Availability (CIA Triad)**
-- **Data Classification**: Public, Internal, Confidential, Restricted
-- **Access Control Models**: Role-Based, Least Privilege, Segregation of Duties
-- **Security Documentation**:
+- **CIA Triad**: Confidentiality, Integrity, Availability  
+- **Access Models**: Role-Based, Least Privilege  
+- **Documentation Types**:
   - Policies = Intent  
   - Standards = Rules  
   - Procedures = How  
-  - Guidelines = Suggestions
+  - Guidelines = Suggestions  
 
 ---
 
 ### 3. 📋 Document Management Practices
 
-- Version control: `policyname_v1.2.md`
-- Approval metadata: Include `Approved By`, `Effective Date`, `Version`
-- Retention: Policies reviewed annually or per regulatory cycle
-- Storage: Centralized, access-controlled drive
+- Versioning: `policyname_v1.2.md`  
+- Approval Metadata: `Effective Date`, `Approved By`, `Version`  
+- Storage: Access-controlled, central repository  
+- Review: Annual or upon control update  
 
 ---
 
 ## ✅ SOP: Onboarding a New Team Member
 
-**Objective**: Ensure new hires receive necessary access, training, and documentation.
+**Objective**: Ensure all systems, training, and documentation are completed during employee onboarding.
 
-### Steps:
+### Task Breakdown
 
-1. Complete HR intake form  
-2. Provision email and system credentials  
-3. Assign relevant training modules (e.g., Security 101, PCI Awareness)  
-4. Share documentation:
-   - Acceptable Use Policy  
-   - Code of Conduct  
-   - Key SOPs  
-5. Confirm acknowledgment of policies via e-signature or tracking system  
-6. Schedule first 30-day check-in  
+| Step | Who          | What                                                   | When              | Dependencies           | Notes                                 |
+|------|---------------|--------------------------------------------------------|-------------------|------------------------|----------------------------------------|
+| 1    | HR            | Complete intake form                                   | Day 0             | Offer letter signed    | May include background verification    |
+| 2    | IT Admin      | Provision credentials and system access                | Day 1             | Intake form            | Use secure channel                     |
+| 3    | Team Manager  | Assign training modules (e.g., Security 101)           | First week        | Account provisioned     | Use LMS or internal tracker            |
+| 4    | Ops/Manager   | Share AUP, Code of Conduct, SOPs                       | First week        | Email enabled          | Use secure document delivery platform  |
+| 5    | New Hire      | Confirm policy acknowledgment                          | Within 7 days     | Documents shared       | e-signature or form tracking           |
+| 6    | Manager       | Schedule and complete 30-day check-in                  | Day 30            | Onboarding complete    | Confirm confidence + clarity           |
 
----
+**Relevant Controls**: `CC-1.1`, `CC-2.2`, `CC-5.1`
 
-## ✅ SOP: Submitting Compliance Evidence
+### 🔄 Workflow Execution
 
-**Objective**: Collect and submit valid documentation to satisfy compliance requirements.
-
-### Steps:
-
-1. Locate applicable control in `compliance-checklist.csv`  
-2. Review control description and required documentation  
-3. Gather supporting file(s): screenshots, logs, policies  
-4. Submit evidence through internal ticket system or evidence API  
-5. Include metadata:
-   - `Control_ID`  
-   - `Submitted_By`  
-   - `Document_URL` or attachment  
-   - `Notes` describing relevance  
-6. Status updated to `Pending Review` or `Complete` upon approval
-
----
-
-## ✅ SOP: Performing an Internal Policy Review
-
-**Objective**: Ensure policies remain current, accurate, and aligned with controls.
-
-### Steps:
-
-1. Open the latest version of the policy document  
-2. Cross-reference against updated standards (e.g., PCI DSS 4.0)  
-3. Use checklist to ensure required fields are present:
-   - Purpose, Scope, Policy Statement, Enforcement, Review Date  
-4. Track any changes in version history  
-5. Submit to approver for sign-off  
-6. Replace prior file version upon approval  
-7. Communicate update via email or internal post (see `message-templates.md`)
-
----
-
-## ✅ SOP: Offboarding a Departing Team Member
-
-**Objective**: Ensure access is revoked, assets recovered, and compliance obligations fulfilled upon termination or resignation.
-
-### Steps:
-
-1. Manager notifies HR of departure and effective date  
-2. HR schedules exit interview and collects feedback  
-3. IT disables user accounts and revokes remote/system access  
-4. Recover all physical/digital assets (e.g., laptop, badge, tokens)  
-5. Compliance confirms hand-off of data ownership and documentation  
-6. Remove from internal groups, mailing lists, org charts  
-7. Finalize payroll and benefits termination  
-8. Retain access logs and acknowledgments as audit trail  
-
----
-
-## 📎 Key References
-
-- `compliance-checklist.csv` – Validate control mapping  
-- `user-personas.md` – Determine audience for training content  
-- `tone-and-style-guide.md` – Ensure consistency in training copy  
-- `workflow-examples.md` – Convert SOPs into structured task flows  
-
----
-
-## 🧠 Assistant Usage Instructions
-
-When prompted to:
-
-- “Summarize onboarding,” → refer to SOP and return checklist  
-- “Draft new hire training,” → use `Key Concepts` and structure content  
-- “Rewrite this procedure,” → convert SOP format into table or bullet list  
-- “Add offboarding checklist,” → refer to Offboarding SOP above  
-- “Compare against this policy,” → check against required review steps
-
----
+```yaml
+workflow:
+  name: onboarding_checklist
+  source: training-manual.md
+  tasks:
+    - step: "Complete HR intake form"
+      assigned_to: "HR"
+    - step: "Provision access"
+      assigned_to: "IT Admin"
+    - step: "Assign training"
+      assigned_to: "Manager"
+    - step: "Distribute policy documents"
+      assigned_to: "Ops"
+    - step: "Confirm acknowledgment"
+      assigned_to: "New Hire"
+    - step: "30-day check-in"
+      assigned_to: "Manager"
